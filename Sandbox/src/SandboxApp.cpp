@@ -102,16 +102,16 @@ public:
 		)";
 
 		std::string blueShaderFragmentSrc = R"(
-			#version 330 core
-			
-			layout(location = 0) out vec4 color;
+#version 330 core
 
-			in vec3 v_Position;
+layout(location = 0) out vec4 color;
 
-			void main()
-			{
-				color = vec4(0.2, 0.3, 0.8, 1.0);
-			}
+in vec3 v_Position;
+
+void main()
+{
+	color = vec4(0.9, 0.3, 0.2, 1.0);
+}
 		)";
 
 		m_BlueShader.reset(new Hazel::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));

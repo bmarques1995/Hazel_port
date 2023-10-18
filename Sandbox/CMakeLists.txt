@@ -7,7 +7,13 @@ file(GLOB_RECURSE SDB_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "./src/*.cpp")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_PREFIX_PATH})
 
-add_executable(${TARGET_NAME} ${SDB_HDRS} ${SDB_SRCS})
+set(WINDOWED_ARG)
+
+if(WIN32)
+set(WINDOWED_ARG WIN32)
+endif()
+
+add_executable(${TARGET_NAME} ${WINDOWED_ARG} ${SDB_HDRS} ${SDB_SRCS})
 target_include_directories(${TARGET_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
 target_link_directories(${TARGET_NAME} PUBLIC "${CMAKE_PREFIX_PATH}/lib")
 target_link_libraries(${TARGET_NAME} PRIVATE Hazel)
