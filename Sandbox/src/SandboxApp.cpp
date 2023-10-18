@@ -4,14 +4,14 @@ class ExampleLayer : public Hazel::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(Hazel::float3::Zero())
 	{
 		m_VertexArray.reset(Hazel::VertexArray::Create());
 
 		float vertices[3 * 7] = {
-			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
-			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
-			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
+			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+			 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+			 0.0f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f
 		};
 
 		std::shared_ptr<Hazel::VertexBuffer> vertexBuffer;
@@ -54,15 +54,13 @@ public:
 			
 			layout(location = 0) in vec3 a_Position;
 			layout(location = 1) in vec4 a_Color;
-
+			
 			uniform mat4 u_ViewProjection;
 
-			out vec3 v_Position;
 			out vec4 v_Color;
 
 			void main()
 			{
-				v_Position = a_Position;
 				v_Color = a_Color;
 				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);	
 			}
@@ -73,12 +71,10 @@ public:
 			
 			layout(location = 0) out vec4 color;
 
-			in vec3 v_Position;
 			in vec4 v_Color;
 
 			void main()
 			{
-				color = vec4(v_Position * 0.5 + 0.5, 1.0);
 				color = v_Color;
 			}
 		)";
@@ -120,21 +116,21 @@ void main()
 	void OnUpdate(Hazel::Timestep ts) override
 	{
 		if (Hazel::Input::IsKeyPressed(HZ_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
+			m_CameraPosition(0) -= m_CameraMoveSpeed * ts;
 		else if (Hazel::Input::IsKeyPressed(HZ_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
+			m_CameraPosition(0) += m_CameraMoveSpeed * ts;
 
 		if (Hazel::Input::IsKeyPressed(HZ_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
+			m_CameraPosition(1) += m_CameraMoveSpeed * ts;
 		else if (Hazel::Input::IsKeyPressed(HZ_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
+			m_CameraPosition(1) -= m_CameraMoveSpeed * ts;
 
 		if (Hazel::Input::IsKeyPressed(HZ_KEY_A))
 			m_CameraRotation += m_CameraRotationSpeed * ts;
 		if (Hazel::Input::IsKeyPressed(HZ_KEY_D))
 			m_CameraRotation -= m_CameraRotationSpeed * ts;
 
-		Hazel::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		Hazel::RenderCommand::SetClearColor(Hazel::float4(0.1f, 0.1f, 0.1f, 1.0f));
 		Hazel::RenderCommand::Clear();
 
 		m_Camera.SetPosition(m_CameraPosition);
@@ -159,7 +155,7 @@ private:
 	std::shared_ptr<Hazel::VertexArray> m_SquareVA;
 
 	Hazel::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
+	Hazel::float3 m_CameraPosition;
 	float m_CameraMoveSpeed = 5.0f;
 
 	float m_CameraRotation = 0.0f;

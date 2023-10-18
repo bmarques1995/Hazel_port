@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <glm/glm.hpp>
+#include "Hazel/Core/IMath.hpp"
 
 #include "Hazel/Core.hpp"
 
@@ -16,7 +16,7 @@ namespace Hazel {
 		void Bind() const;
 		void Unbind() const;
 
-		void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
+		void UploadUniformMat4(const std::string& name, const float* matrix_ptr);
 	private:
 		uint32_t m_RendererID;
 	};

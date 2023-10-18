@@ -15,3 +15,4 @@ $installPrefix = Join-Path (Get-Location) "Windows\$buildMode"
 ./installers/glfw $buildMode $installPrefix
 ./installers/glad $buildMode $installPrefix
 ./installers/glm $buildMode $installPrefix
+./installers/eigen $buildMode $installPrefix

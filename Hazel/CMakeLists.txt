@@ -11,6 +11,7 @@ find_package(spdlog REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(glad REQUIRED)
 find_package(glm REQUIRED)
+find_package(eigen3 REQUIRED)
 
 add_library(${TARGET_NAME} SHARED ${HZ_HDRS} ${HZ_SRCS})
 target_precompile_headers(${TARGET_NAME} PRIVATE ./src/hzpch.hpp)

@@ -11,6 +11,7 @@
 #include "Hazel/Input.hpp"
 #include "Hazel/KeyCodes.hpp"
 #include "Hazel/MouseButtonCodes.hpp"
+#include "Hazel/Core/IMath.hpp"
 
 // ---Renderer------------------------
 #include "Hazel/Renderer/Renderer.hpp"

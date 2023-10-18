@@ -17,7 +17,7 @@ namespace Hazel {
 	void Renderer::Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray)
 	{
 		shader->Bind();
-		shader->UploadUniformMat4("u_ViewProjection", s_SceneData->ViewProjectionMatrix);
+		shader->UploadUniformMat4("u_ViewProjection", &s_SceneData->ViewProjectionMatrix(0,0));
 
 		vertexArray->Bind();
 		RenderCommand::DrawIndexed(vertexArray);

@@ -29,6 +29,7 @@ namespace Hazel {
 		glInfo = reinterpret_cast<const char*>(glGetString(GL_VERSION));
 		Console::CoreLog("  Version: {0}", glInfo);
 
+		glDepthRange(0.0f, 1.0f);
 	}
 
 	void OpenGLContext::SwapBuffers()
