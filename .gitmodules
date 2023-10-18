@@ -10,7 +10,3 @@
 [submodule "modules/glm"]
 	path = modules/glm
 	url = https://github.com/g-truc/glm.git
-[submodule "modules/imgui/imgui"]
-	path = modules/imgui/imgui
-	url = https://github.com/ocornut/imgui
-	branch = docking

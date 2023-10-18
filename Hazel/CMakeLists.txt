@@ -16,7 +16,7 @@ add_library(${TARGET_NAME} SHARED ${HZ_HDRS} ${HZ_SRCS} "src/Hazel/Core.h")
 target_precompile_headers(${TARGET_NAME} PRIVATE ./src/hzpch.h)
 target_include_directories(${TARGET_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src" "${CMAKE_PREFIX_PATH}/include" "${CMAKE_PREFIX_PATH}/include/imgui")
 target_link_directories(${TARGET_NAME} PUBLIC "${CMAKE_PREFIX_PATH}/lib")
-target_link_libraries(${TARGET_NAME} PUBLIC spdlog::spdlog glad::gladstatic opengl32 imgui glfw)
+target_link_libraries(${TARGET_NAME} PUBLIC spdlog::spdlog glad::gladstatic opengl32 glfw)
 target_compile_definitions(${TARGET_NAME} PUBLIC _CRT_SECURE_NO_WARNINGS)
 
 if(WIN32)

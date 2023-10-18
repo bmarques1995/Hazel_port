@@ -9,8 +9,6 @@
 
 #include "Hazel/Core/Timestep.h"
 
-#include "Hazel/ImGui/ImGuiLayer.h"
-
 namespace Hazel {
 
 	class HAZEL_API Application
@@ -33,7 +31,6 @@ namespace Hazel {
 		bool OnWindowClose(WindowCloseEvent& e);
 	private:
 		std::unique_ptr<Window> m_Window;
-		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 		float m_LastFrameTime = 0.0f;

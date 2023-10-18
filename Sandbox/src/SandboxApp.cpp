@@ -1,7 +1,5 @@
 #include <Hazel.h>
 
-#include "imgui/imgui.h"
-
 class ExampleLayer : public Hazel::Layer
 {
 public:
@@ -148,11 +146,6 @@ public:
 		Hazel::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Hazel::Renderer::EndScene();
-	}
-
-	virtual void OnImGuiRender() override
-	{
-
 	}
 
 	void OnEvent(Hazel::Event& event) override

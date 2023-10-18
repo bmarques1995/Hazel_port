@@ -12,8 +12,6 @@
 #include "Hazel/KeyCodes.h"
 #include "Hazel/MouseButtonCodes.h"
 
-#include "Hazel/ImGui/ImGuiLayer.h"
-
 // ---Renderer------------------------
 #include "Hazel/Renderer/Renderer.h"
 #include "Hazel/Renderer/RenderCommand.h"
