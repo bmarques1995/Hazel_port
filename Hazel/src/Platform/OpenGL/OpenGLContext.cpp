@@ -21,12 +21,13 @@ namespace Hazel {
 
 		std::string glInfo = reinterpret_cast<const char*>(glGetString(GL_VENDOR));
 
-		HZ_CORE_INFO("OpenGL Info:");
-		HZ_CORE_INFO("  Vendor: {0}", glInfo);
+
+		Console::CoreLog("OpenGL Info:");
+		Console::CoreLog("  Vendor: {0}", glInfo);
 		glInfo = reinterpret_cast<const char*>(glGetString(GL_RENDERER));
-		HZ_CORE_INFO("  Renderer: {0}", glInfo);
+		Console::CoreLog("  Renderer: {0}", glInfo);
 		glInfo = reinterpret_cast<const char*>(glGetString(GL_VERSION));
-		HZ_CORE_INFO("  Version: {0}", glInfo);
+		Console::CoreLog("  Version: {0}", glInfo);
 
 	}
 
