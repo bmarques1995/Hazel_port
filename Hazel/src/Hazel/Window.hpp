@@ -1,9 +1,9 @@
 #pragma once
 
-#include "hzpch.h"
+#include "hzpch.hpp"
 
-#include "Hazel/Core.h"
-#include "Hazel/Events/Event.h"
+#include "Hazel/Core.hpp"
+#include "Hazel/Events/Event.hpp"
 
 namespace Hazel {
 

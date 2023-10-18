@@ -1,11 +1,11 @@
-#include "hzpch.h"
-#include "Application.h"
+#include "hzpch.hpp"
+#include "Application.hpp"
 
-#include "Hazel/Console.h"
+#include "Hazel/Console.hpp"
 
-#include "Hazel/Renderer/Renderer.h"
+#include "Hazel/Renderer/Renderer.hpp"
 
-#include "Input.h"
+#include "Input.hpp"
 
 #include <glfw/glfw3.h>
 

@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Hazel/Console.h"
+#include "Hazel/Console.hpp"
 
 #ifdef HZ_PLATFORM_WINDOWS
 	#include <Windows.h>

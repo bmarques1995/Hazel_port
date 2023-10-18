@@ -1,4 +1,4 @@
-#include <Hazel.h>
+#include <Hazel.hpp>
 
 class ExampleLayer : public Hazel::Layer
 {

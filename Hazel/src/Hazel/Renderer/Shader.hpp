@@ -3,7 +3,7 @@
 #include <string>
 #include <glm/glm.hpp>
 
-#include "Hazel/Core.h"
+#include "Hazel/Core.hpp"
 
 namespace Hazel {
 

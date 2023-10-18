@@ -1,11 +1,11 @@
-#include "hzpch.h"
-#include "GLFWWindow.h"
+#include "hzpch.hpp"
+#include "GLFWWindow.hpp"
 
-#include "Hazel/Events/ApplicationEvent.h"
-#include "Hazel/Events/MouseEvent.h"
-#include "Hazel/Events/KeyEvent.h"
+#include "Hazel/Events/ApplicationEvent.hpp"
+#include "Hazel/Events/MouseEvent.hpp"
+#include "Hazel/Events/KeyEvent.hpp"
 
-#include "Platform/OpenGL/OpenGLContext.h"
+#include "Platform/OpenGL/OpenGLContext.hpp"
 
 namespace Hazel {
 	

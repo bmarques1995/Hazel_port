@@ -1,8 +1,8 @@
 #pragma once
 
 #include <memory>
-#include "Hazel/Renderer/Buffer.h"
-#include "Hazel/Core.h"
+#include "Hazel/Renderer/Buffer.hpp"
+#include "Hazel/Core.hpp"
 
 namespace Hazel {
 
