@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Hazel/Core.h"
+
 namespace Hazel {
 
-	class GraphicsContext
+	class HAZEL_API GraphicsContext
 	{
 	public:
 		virtual void Init() = 0;

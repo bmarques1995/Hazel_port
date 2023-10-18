@@ -1,8 +1,10 @@
 #pragma once
 
+#include "Hazel/Core.h"
+
 namespace Hazel {
 
-	class Timestep
+	class HAZEL_API Timestep
 	{
 	public:
 		Timestep(float time = 0.0f)

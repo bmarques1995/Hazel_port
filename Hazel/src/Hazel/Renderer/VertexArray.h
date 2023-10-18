@@ -2,10 +2,11 @@
 
 #include <memory>
 #include "Hazel/Renderer/Buffer.h"
+#include "Hazel/Core.h"
 
 namespace Hazel {
 
-	class VertexArray
+	class HAZEL_API VertexArray
 	{
 	public:
 		virtual ~VertexArray() {}

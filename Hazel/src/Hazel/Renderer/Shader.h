@@ -3,9 +3,11 @@
 #include <string>
 #include <glm/glm.hpp>
 
+#include "Hazel/Core.h"
+
 namespace Hazel {
 
-	class Shader
+	class HAZEL_API Shader
 	{
 	public:
 		Shader(const std::string& vertexSrc, const std::string& fragmentSrc);
