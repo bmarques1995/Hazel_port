@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ORTHOGRAPHIC_CAMERA_HPP
+#define ORTHOGRAPHIC_CAMERA_HPP
 
 #include "Hazel/Core/IMath.hpp"
 #include "Hazel/Core.hpp"
@@ -31,3 +32,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

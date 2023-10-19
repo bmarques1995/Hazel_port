@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ENTRYPOINT_HPP
+#define ENTRYPOINT_HPP
 
 #ifdef HZ_PLATFORM_WINDOWS
 
@@ -17,5 +18,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 
 	Hazel::Console::End();
 }
+
+#endif
 
 #endif

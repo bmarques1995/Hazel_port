@@ -3,8 +3,4 @@
 
 #include "Platform/OpenGL/OpenGLRendererAPI.hpp"
 
-namespace Hazel {
-
-	RendererAPI* RenderCommand::s_RendererAPI = new OpenGLRendererAPI;
-
-}
+Hazel::RendererAPI* Hazel::RenderCommand::s_RendererAPI = new Hazel::OpenGLRendererAPI;

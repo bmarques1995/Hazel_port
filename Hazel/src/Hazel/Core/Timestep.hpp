@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TIMESTEP_HPP
+#define TIMESTEP_HPP
 
 #include "Hazel/Core.hpp"
 
@@ -21,3 +22,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

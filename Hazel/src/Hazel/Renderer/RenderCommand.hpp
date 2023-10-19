@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RENDER_COMMAND_HPP
+#define RENDER_COMMAND_HPP
 
 #include "RendererAPI.hpp"
 
@@ -26,3 +27,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

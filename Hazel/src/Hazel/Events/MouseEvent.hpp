@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MOUSE_EVENT_HPP
+#define MOUSE_EVENT_HPP
 
 #include "Event.hpp"
 
@@ -94,3 +95,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

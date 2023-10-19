@@ -4,18 +4,14 @@
 #include "Renderer.hpp"
 #include "Platform/OpenGL/OpenGLVertexArray.hpp"
 
-namespace Hazel {
-
-	VertexArray* VertexArray::Create()
+Hazel::VertexArray* Hazel::VertexArray::Create()
+{
+	switch (Renderer::GetAPI())
 	{
-		switch (Renderer::GetAPI())
-		{
-			case RendererAPI::API::None:    HZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::OpenGL:  return new OpenGLVertexArray();
-		}
-
-		HZ_CORE_ASSERT(false, "Unknown RendererAPI!");
-		return nullptr;
+		case RendererAPI::API::None:    HZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL:  return new OpenGLVertexArray();
 	}
 
+	HZ_CORE_ASSERT(false, "Unknown RendererAPI!");
+	return nullptr;
 }

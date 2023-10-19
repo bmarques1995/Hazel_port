@@ -1,4 +1,5 @@
-#pragma once
+#ifndef HZPCH_HPP
+#define HZPCH_HPP
 
 #include <iostream>
 #include <memory>
@@ -16,4 +17,6 @@
 
 #ifdef HZ_PLATFORM_WINDOWS
 	#include <Windows.h>
+#endif
+
 #endif

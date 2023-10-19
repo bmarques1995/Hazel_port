@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CORE_HPP
+#define CORE_HPP
 
 #ifdef HZ_PLATFORM_WINDOWS
 #if HZ_DYNAMIC_LINK
@@ -19,8 +20,8 @@
 #endif
 
 #ifdef HZ_ENABLE_ASSERTS
-	#define HZ_ASSERT(x, ...) { if(!(x)) { Console::Error("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define HZ_CORE_ASSERT(x, ...) { if(!(x)) { Console::CoreError("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define HZ_ASSERT(x, ...) { if(!(x)) { Hazel::Console::Error("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define HZ_CORE_ASSERT(x, ...) { if(!(x)) { Hazel::Console::CoreError("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define HZ_ASSERT(x, ...)
 	#define HZ_CORE_ASSERT(x, ...)
@@ -28,4 +29,6 @@
 
 #define BIT(x) (1 << x)
 
-#define HZ_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+//#define HZ_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+
+#endif

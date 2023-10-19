@@ -1,4 +1,5 @@
-#pragma once
+#ifndef WINDOW_HPP
+#define WINDOW_HPP
 
 #include "hzpch.hpp"
 
@@ -45,3 +46,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INPUT_HPP
+#define INPUT_HPP
 
 #include "Hazel/Core.hpp"
 
@@ -25,3 +26,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

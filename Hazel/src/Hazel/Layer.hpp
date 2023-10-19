@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LAYER_HPP
+#define LAYER_HPP
 
 #include "Hazel/Core.hpp"
 #include "Hazel/Core/Timestep.hpp"
@@ -23,3 +24,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

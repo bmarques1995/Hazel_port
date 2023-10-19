@@ -5,36 +5,32 @@
 #include <glad/gl.h>
 #include <GL/GL.h>
 
-namespace Hazel {
+Hazel::OpenGLContext::OpenGLContext(GLFWwindow* windowHandle)
+	: m_WindowHandle(windowHandle)
+{
+	HZ_CORE_ASSERT(windowHandle, "Window handle is null!")
+}
 
-	OpenGLContext::OpenGLContext(GLFWwindow* windowHandle)
-		: m_WindowHandle(windowHandle)
-	{
-		HZ_CORE_ASSERT(windowHandle, "Window handle is null!")
-	}
+void Hazel::OpenGLContext::Init()
+{
+	glfwMakeContextCurrent(m_WindowHandle);
+	int status = gladLoadGL((GLADloadfunc)glfwGetProcAddress);
+	HZ_CORE_ASSERT(status, "Failed to initialize Glad!");
 
-	void OpenGLContext::Init()
-	{
-		glfwMakeContextCurrent(m_WindowHandle);
-		int status = gladLoadGL((GLADloadfunc)glfwGetProcAddress);
-		HZ_CORE_ASSERT(status, "Failed to initialize Glad!");
-
-		std::string glInfo = reinterpret_cast<const char*>(glGetString(GL_VENDOR));
+	std::string glInfo = reinterpret_cast<const char*>(glGetString(GL_VENDOR));
 
 
-		Console::CoreLog("OpenGL Info:");
-		Console::CoreLog("  Vendor: {0}", glInfo);
-		glInfo = reinterpret_cast<const char*>(glGetString(GL_RENDERER));
-		Console::CoreLog("  Renderer: {0}", glInfo);
-		glInfo = reinterpret_cast<const char*>(glGetString(GL_VERSION));
-		Console::CoreLog("  Version: {0}", glInfo);
+	Console::CoreLog("OpenGL Info:");
+	Console::CoreLog("  Vendor: {0}", glInfo);
+	glInfo = reinterpret_cast<const char*>(glGetString(GL_RENDERER));
+	Console::CoreLog("  Renderer: {0}", glInfo);
+	glInfo = reinterpret_cast<const char*>(glGetString(GL_VERSION));
+	Console::CoreLog("  Version: {0}", glInfo);
 
-		glDepthRange(0.0f, 1.0f);
-	}
+	glDepthRange(0.0f, 1.0f);
+}
 
-	void OpenGLContext::SwapBuffers()
-	{
-		glfwSwapBuffers(m_WindowHandle);
-	}
-
+void Hazel::OpenGLContext::SwapBuffers()
+{
+	glfwSwapBuffers(m_WindowHandle);
 }

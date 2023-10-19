@@ -1,4 +1,5 @@
-#pragma once
+#ifndef APPLICATION_HPP
+#define APPLICATION_HPP
 
 #include "Core.hpp"
 
@@ -42,3 +43,5 @@ namespace Hazel {
 	Application* CreateApplication();
 
 }
+
+#endif

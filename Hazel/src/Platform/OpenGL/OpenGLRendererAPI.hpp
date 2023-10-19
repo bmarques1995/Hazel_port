@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OPENGL_RENDERER_API_HPP
+#define OPENGL_RENDERER_API_HPP
 
 #include "Hazel/Renderer/RendererAPI.hpp"
 
@@ -15,3 +16,5 @@ namespace Hazel {
 
 
 }
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BUFFER_HPP
+#define BUFFER_HPP
 
 #include "Hazel/Core.hpp"
 
@@ -130,3 +131,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

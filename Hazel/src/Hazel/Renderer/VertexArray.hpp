@@ -1,4 +1,5 @@
-#pragma once
+#ifndef VERTEX_ARRAY_HPP
+#define VERTEX_ARRAY_HPP
 
 #include <memory>
 #include "Hazel/Renderer/Buffer.hpp"
@@ -22,5 +23,6 @@ namespace Hazel {
 
 		static VertexArray* Create();
 	};
-
 }
+
+#endif

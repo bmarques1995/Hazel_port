@@ -1,4 +1,5 @@
-#pragma once
+#ifndef EVENT_HPP
+#define EVENT_HPP
 
 #include "hzpch.hpp"
 #include "Hazel/Core.hpp"
@@ -82,3 +83,4 @@ namespace Hazel {
 
 }
 
+#endif

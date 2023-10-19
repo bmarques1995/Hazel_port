@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OPENGL_VERTEX_ARRAY_HPP
+#define OPENGL_VERTEX_ARRAY_HPP
 
 #include "Hazel/Renderer/VertexArray.hpp"
 
@@ -25,3 +26,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

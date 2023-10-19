@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OPENGL_BUFFER_HPP
+#define OPENGL_BUFFER_HPP
 
 #include "Hazel/Renderer/Buffer.hpp"
 
@@ -36,3 +37,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

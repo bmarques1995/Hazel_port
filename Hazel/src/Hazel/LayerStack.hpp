@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LAYER_STACK_HPP
+#define LAYER_STACK_HPP
 
 #include "Hazel/Core.hpp"
 #include "Layer.hpp"
@@ -26,3 +27,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GLFW_WINDOW_HPP
+#define GLFW_WINDOW_HPP
 
 #include "Hazel/Window.hpp"
 #include "Hazel/Renderer/GraphicsContext.hpp"
@@ -44,3 +45,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

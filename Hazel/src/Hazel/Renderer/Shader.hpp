@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SHADER_HPP
+#define SHADER_HPP
 
 #include <string>
 #include "Hazel/Core/IMath.hpp"
@@ -20,5 +21,6 @@ namespace Hazel {
 	private:
 		uint32_t m_RendererID;
 	};
-
 }
+
+#endif

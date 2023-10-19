@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RENDERER_HPP
+#define RENDERER_HPP
 
 #include "RenderCommand.hpp"
 
@@ -24,6 +25,6 @@ namespace Hazel {
 
 		static SceneData* s_SceneData;
 	};
-
-
 }
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GLFW_INPUT_HPP
+#define GLFW_INPUT_HPP
 
 #include "Hazel/Input.hpp"
 
@@ -16,3 +17,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

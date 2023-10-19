@@ -13,11 +13,18 @@ find_package(glad REQUIRED)
 find_package(glm REQUIRED)
 find_package(eigen3 REQUIRED)
 
+if(WIN32)
+find_library(OS_TARGET NAMES d3d11 dxgi dxguid REQUIRED)
+endif()
+
 add_library(${TARGET_NAME} SHARED ${HZ_HDRS} ${HZ_SRCS})
 target_precompile_headers(${TARGET_NAME} PRIVATE ./src/hzpch.hpp)
 target_include_directories(${TARGET_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src" "${CMAKE_PREFIX_PATH}/include" "${CMAKE_PREFIX_PATH}/include/imgui")
 target_link_directories(${TARGET_NAME} PUBLIC "${CMAKE_PREFIX_PATH}/lib")
 target_link_libraries(${TARGET_NAME} PUBLIC spdlog::spdlog glad::gladstatic opengl32 glfw)
+if(WIN32)
+target_link_libraries(${TARGET_NAME} PUBLIC d3d11 dxgi dxguid)
+endif()
 target_compile_definitions(${TARGET_NAME} PUBLIC _CRT_SECURE_NO_WARNINGS)
 
 if(WIN32)

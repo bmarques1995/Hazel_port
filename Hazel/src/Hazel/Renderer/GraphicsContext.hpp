@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GRAPHICS_CONTEXT_HPP
+#define GRAPHICS_CONTEXT_HPP
 
 #include "Hazel/Core.hpp"
 
@@ -12,3 +13,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RENDERER_API_HPP
+#define RENDERER_API_HPP
 
 #include "Hazel/Core/IMath.hpp"
 
@@ -25,3 +26,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

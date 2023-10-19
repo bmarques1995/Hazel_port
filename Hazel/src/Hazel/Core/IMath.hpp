@@ -1,4 +1,5 @@
-#pragma once
+#ifndef IMATH_HPP
+#define IMATH_HPP
 
 #include <eigen3/Eigen/Eigen>
 #include <cmath>
@@ -35,3 +36,5 @@ namespace Hazel
 	-> Inverse
 	*/
 }
+
+#endif

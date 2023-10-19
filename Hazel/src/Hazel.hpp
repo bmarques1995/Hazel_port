@@ -1,4 +1,5 @@
-#pragma once
+#ifndef HAZEL_HPP
+#define HAZEL_HPP
 
 // For use by Hazel applications
 
@@ -27,3 +28,5 @@
 // ---Entry Point---------------------
 #include "Hazel/EntryPoint.hpp"
 // -----------------------------------
+
+#endif

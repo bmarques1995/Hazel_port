@@ -1,4 +1,5 @@
-#pragma once
+#ifndef OPENGL_CONTEXT_HPP
+#define OPENGL_CONTEXT_HPP
 
 #include "Hazel/Renderer/GraphicsContext.hpp"
 
@@ -18,3 +19,5 @@ namespace Hazel {
 	};
 
 }
+
+#endif

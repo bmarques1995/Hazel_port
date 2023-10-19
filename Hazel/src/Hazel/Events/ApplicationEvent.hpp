@@ -1,4 +1,5 @@
-#pragma once
+#ifndef APPLICATION_EVENT_HPP
+#define APPLICATION_EVENT_HPP
 
 #include "Event.hpp"
 
@@ -62,3 +63,5 @@ namespace Hazel {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 }
+
+#endif

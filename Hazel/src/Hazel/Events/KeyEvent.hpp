@@ -1,4 +1,5 @@
-#pragma once
+#ifndef KEY_EVENT_HPP
+#define KEY_EVENT_HPP
 
 #include "Event.hpp"
 
@@ -69,3 +70,5 @@ namespace Hazel {
 		EVENT_CLASS_TYPE(KeyTyped)
 	};
 }
+
+#endif
