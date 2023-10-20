@@ -30,7 +30,21 @@ void Hazel::OpenGLContext::Init()
 	glDepthRange(0.0f, 1.0f);
 }
 
-void Hazel::OpenGLContext::SwapBuffers()
+void Hazel::OpenGLContext::Present()
 {
 	glfwSwapBuffers(m_WindowHandle);
+}
+
+void Hazel::OpenGLContext::SetVSync(bool enabled)
+{
+	if (enabled)
+		glfwSwapInterval(1);
+	else
+		glfwSwapInterval(0);
+	m_VSync = enabled;
+}
+
+bool Hazel::OpenGLContext::IsVSync()
+{
+	return m_VSync;
 }

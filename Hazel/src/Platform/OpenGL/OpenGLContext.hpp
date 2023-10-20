@@ -13,9 +13,13 @@ namespace Hazel {
 		OpenGLContext(GLFWwindow* windowHandle);
 
 		virtual void Init() override;
-		virtual void SwapBuffers() override;
+		virtual void Present() override;
+		//this is thinking in D3D11, Vulkan and D3D12, that controls the VSync at graphics context
+		virtual void SetVSync(bool enabled) override;
+		virtual bool IsVSync() override;
 	private:
 		GLFWwindow* m_WindowHandle;
+		bool m_VSync;
 	};
 
 }

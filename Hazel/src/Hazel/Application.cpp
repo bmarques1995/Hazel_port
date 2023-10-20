@@ -5,6 +5,8 @@
 #include "Hazel/Renderer/Renderer.hpp"
 #include "Input.hpp"
 
+#include "Platform/OpenGL/OpenGLContext.hpp"
+
 #include <glfw/glfw3.h>
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -18,6 +20,9 @@ Hazel::Application::Application()
 
 	m_Window = std::unique_ptr<Window>(Window::Create());
 	m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+	m_Context = std::unique_ptr<GraphicsContext>(new OpenGLContext(reinterpret_cast<GLFWwindow*>(m_Window->GetNativeWindow())));
+	m_Context->Init();
+	m_Context->SetVSync(true);
 }
 
 void Hazel::Application::PushLayer(Layer* layer)
@@ -55,6 +60,7 @@ void Hazel::Application::Run()
 			layer->OnUpdate(timestep);
 
 		m_Window->OnUpdate();
+		m_Context->Present();
 	}
 }
 

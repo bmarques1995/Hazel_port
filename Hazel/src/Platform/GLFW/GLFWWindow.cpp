@@ -16,20 +16,20 @@ static void GLFWErrorCallback(int error, const char* description)
 
 Hazel::Window* Hazel::Window::Create(const WindowProps& props)
 {
-	return new WindowsWindow(props);
+	return new GLFWWindow(props);
 }
 
-Hazel::WindowsWindow::WindowsWindow(const WindowProps& props)
+Hazel::GLFWWindow::GLFWWindow(const WindowProps& props)
 {
 	Init(props);
 }
 
-Hazel::WindowsWindow::~WindowsWindow()
+Hazel::GLFWWindow::~GLFWWindow()
 {
 	Shutdown();
 }
 
-void Hazel::WindowsWindow::Init(const WindowProps& props)
+void Hazel::GLFWWindow::Init(const WindowProps& props)
 {
 	m_Data.Title = props.Title;
 	m_Data.Width = props.Width;
@@ -48,11 +48,7 @@ void Hazel::WindowsWindow::Init(const WindowProps& props)
 
 	m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 
-	m_Context = new OpenGLContext(m_Window);
-	m_Context->Init();
-
 	glfwSetWindowUserPointer(m_Window, &m_Data);
-	SetVSync(true);
 
 	// Set GLFW callbacks
 	glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
@@ -145,28 +141,12 @@ void Hazel::WindowsWindow::Init(const WindowProps& props)
 	});
 }
 
-void Hazel::WindowsWindow::Shutdown()
+void Hazel::GLFWWindow::Shutdown()
 {
 	glfwDestroyWindow(m_Window);
 }
 
-void Hazel::WindowsWindow::OnUpdate()
+void Hazel::GLFWWindow::OnUpdate()
 {
 	glfwPollEvents();
-	m_Context->SwapBuffers();
-}
-
-void Hazel::WindowsWindow::SetVSync(bool enabled)
-{
-	if (enabled)
-		glfwSwapInterval(1);
-	else
-		glfwSwapInterval(0);
-
-	m_Data.VSync = enabled;
-}
-
-bool Hazel::WindowsWindow::IsVSync() const
-{
-	return m_Data.VSync;
 }

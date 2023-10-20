@@ -8,6 +8,7 @@
 #include "Hazel/Events/Event.hpp"
 #include "Hazel/Events/ApplicationEvent.hpp"
 
+#include "Hazel/Renderer/GraphicsContext.hpp"
 #include "Hazel/Core/Timestep.hpp"
 
 namespace Hazel {
@@ -26,12 +27,14 @@ namespace Hazel {
 		void PushOverlay(Layer* layer);
 
 		inline Window& GetWindow() { return *m_Window; }
+		inline GraphicsContext& GetContext() { return *m_Context; }
 
 		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 	private:
 		std::unique_ptr<Window> m_Window;
+		std::unique_ptr<GraphicsContext> m_Context;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 		float m_LastFrameTime = 0.0f;
